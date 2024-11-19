@@ -9,7 +9,6 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.issog.tourismappmade.databinding.ActivityMainBinding
-import com.issog.tourismappmade.favorite.FavoriteFragment
 import com.issog.tourismappmade.home.HomeFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -52,7 +51,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.app_name)
             }
             R.id.nav_favorite -> {
-                fragment = FavoriteFragment()
+                val fragmentFavorite = Class.forName("com.issog.tourismappmade.favorite.FavoriteFragment").newInstance() as Fragment
+                fragment = fragmentFavorite
                 title = getString(R.string.menu_favorite)
             }
             R.id.nav_map -> {

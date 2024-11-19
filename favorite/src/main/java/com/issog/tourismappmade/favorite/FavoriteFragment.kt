@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.issog.tourismappmade.core.ui.TourismAdapter
-import com.issog.tourismappmade.core.ui.ViewModelFactory
 import com.issog.tourismappmade.databinding.FragmentFavoriteBinding
 import com.issog.tourismappmade.detail.DetailTourismActivity
+import com.issog.tourismappmade.favorite.di.ViewModelFavoriteFactory
 
 class FavoriteFragment : Fragment() {
 
-    private val favoriteViewModel: FavoriteViewModel by viewModels { ViewModelFactory.getInstance(requireContext()) }
+    private val favoriteViewModel: FavoriteViewModel by viewModels { ViewModelFavoriteFactory.getInstance(requireContext()) }
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
