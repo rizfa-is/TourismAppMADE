@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.issog.tourismappmade.core.di.Injection
 import com.issog.tourismappmade.core.domain.usecase.TourismUseCase
 import com.issog.tourismappmade.detail.DetailTourismViewModel
-import com.issog.tourismappmade.favorite.FavoriteViewModel
 import com.issog.tourismappmade.home.HomeViewModel
 
 class ViewModelFactory(
@@ -29,9 +28,6 @@ class ViewModelFactory(
         when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(tourismUseCase) as T
-            }
-            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
-                FavoriteViewModel(tourismUseCase) as T
             }
             modelClass.isAssignableFrom(DetailTourismViewModel::class.java) -> {
                 DetailTourismViewModel(tourismUseCase) as T
